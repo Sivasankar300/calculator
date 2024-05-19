@@ -32,11 +32,8 @@ switch(op){
 }
 
 }
-console.log(operate(10,'add',2))
-console.log(operate(10,'sub',2))
-console.log(operate(10,'mul',2))
-console.log(operate(10,'div',2))
 
+let calculator = document.querySelector('calculator');
 const display = document.querySelector('display');
 const one = document.querySelector('one');
 const two = document.querySelector('two');
@@ -53,6 +50,9 @@ const subtraction = document.querySelector('sub');
 const multipy = document.querySelector('multi');
 const divison = document.querySelector('divide');
 
+const keys = document.querySelectorAll('.keys')
+const fifthRow = document.querySelector('fifthRow')
 
+let storedValue = [];
 
 
