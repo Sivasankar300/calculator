@@ -9,8 +9,7 @@ As well as letting the students figure out and learn How to store, Process and D
 **Live Preview:** https://sivasankarh.github.io/calculator/
 
 ### What I have learnt from it:
- I have achieved the solution to the above problem by utilising advanced Array functions such as "push" and textContent instead of innerHTML to display the values as innerHTML is prone to 
-cross-site scripting attacks.
+ I have achieved the solution to the above problem by utilising advanced Array functions such as "push" and textContent instead of innerHTML to display the values as innerHTML is prone to cross-site scripting attacks.
 
 ### It's functions:
 - Perform all forms of Arithmatic calculations (Add,Subtract,Multipy,Divide)
@@ -21,6 +20,7 @@ cross-site scripting attacks.
 - Decimal point to perform calculation on floating point numbers
 - Backscape to remove numbers one at a time
 - Better CSS
+- Clean up the commit log as there are some mistakes.
 
 **Lesson Link:** https://www.theodinproject.com/lessons/foundations-calculator
 - Added Keyboard support for extra credits for now.
