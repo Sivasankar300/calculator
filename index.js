@@ -70,78 +70,6 @@ let secondValueNum;
 // To check if the input should be stored as the first or second value
 let secondValueboolan;
 
-window.addEventListener("keydown", (event) => {
-  if (event.defaultPrevented) {
-    return;
-  }
-  switch (event.code) {
-    case "Digit1":
-    case "Numpad1":
-      keyOne();
-      break;
-    case "Digit2":
-    case "Numpad2":
-      keyTwo();
-      break;
-    case "Digit3":
-    case "Numpad3":
-      keyThree();
-      break;
-    case "Digit4":
-    case "Numpad4":
-      keyFour();
-      break;
-    case "Digit5":
-    case "Numpad5":
-      keyFive();
-      break;
-    case "Digit6":
-    case "Numpad6":
-      keySix();
-      break;
-    case "Digit7":
-    case "Numpad7":
-      keySeven();
-      break;
-    case "Digit8":
-    case "Numpad8":
-      keyEight();
-      break;
-    case "Digit9":
-    case "Numpad9":
-      keyNine();
-      break;
-    case "Digit0":
-    case "Numpad0":
-      keyZero();
-      break;
-    case "NumpadAdd":
-      keyAdd()
-      break;
-    case "NumpadSubtract":
-    case "Minus":
-      keySub();
-      break;
-    case "NumpadMultipy":
-      keyMul();
-      break;
-    case "NumpadDivide":
-      keyDiv();
-      break;
-    case "Equal":
-    case "NumpadEqual":
-    case "NumpadEnter":
-      keyEqual();
-      break;
-    case "Escape":
-      keyClear();
-      break;
-
-
-    
-  }
-});
-
 one.addEventListener("click", keyOne);
 function keyOne() {
   if (secondValueboolan == true) {
@@ -329,3 +257,74 @@ function keyEqual() {
   firstValueNum = 0;
   secondValueNum = 0;
 }
+
+
+//Keyboard functionality using key code
+window.addEventListener("keydown", (event) => {
+  if (event.defaultPrevented) {
+    return;
+  }
+  switch (event.code) {
+    case "Digit1":
+    case "Numpad1":
+      keyOne();
+      break;
+    case "Digit2":
+    case "Numpad2":
+      keyTwo();
+      break;
+    case "Digit3":
+    case "Numpad3":
+      keyThree();
+      break;
+    case "Digit4":
+    case "Numpad4":
+      keyFour();
+      break;
+    case "Digit5":
+    case "Numpad5":
+      keyFive();
+      break;
+    case "Digit6":
+    case "Numpad6":
+      keySix();
+      break;
+    case "Digit7":
+    case "Numpad7":
+      keySeven();
+      break;
+    case "Digit8":
+    case "Numpad8":
+      keyEight();
+      break;
+    case "Digit9":
+    case "Numpad9":
+      keyNine();
+      break;
+    case "Digit0":
+    case "Numpad0":
+      keyZero();
+      break;
+    case "NumpadAdd":
+      keyAdd()
+      break;
+    case "NumpadSubtract":
+    case "Minus":
+      keySub();
+      break;
+    case "NumpadMultipy":
+      keyMul();
+      break;
+    case "NumpadDivide":
+      keyDiv();
+      break;
+    case "Equal":
+    case "NumpadEqual":
+    case "NumpadEnter":
+      keyEqual();
+      break;
+    case "Escape":
+      keyClear();
+      break;
+  }
+});
