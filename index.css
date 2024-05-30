@@ -26,15 +26,14 @@ body{
 }
 
 .calculator {
-  padding: 75px 50px;
+  padding: 25px 25px 25px;
   border: 5px black solid;
-  border-radius: 50px;
-  gap: 30px;
+  gap: 20px;
 
   /* To avoid issues from occuring when the window is resized */
   min-width: 400px;
   max-width: 400px;
-  min-height: 550px;
+  min-height: 400px;
 
   display: flex;
   /* Stacks the elements vertically */
@@ -46,7 +45,7 @@ body{
 .firstRow {
   gap: 50px;
 
-  width: 265px;
+  width: 285px;
   height: 60px;
 
   background-color: black;
@@ -54,12 +53,13 @@ body{
 
   text-align:center;
 
+  margin-left:25px;
+
   display:flex;
   justify-content: flex-end;
   align-items:center;
-  
-  margin: auto;
 
+  
   border: 5px lightslategray solid ;
 }
 
@@ -104,7 +104,6 @@ body{
 
   padding: 15px 20px;
   /* border: 5px #98d2db solid; */
-  border-radius: 15px;
 }
 
 .operators {
