@@ -1,71 +1,194 @@
-.calculator{
-    align-content: center;
-    justify-content: center;
-    margin-top: 150px;
-    
+/* Applies box sizing and resets the margin and padding of all elements */
+
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-*{
-    background-color: #376952;
-
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.firstRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    width: 295px;
-    height: 50px;
-    background-color: white;
-    margin: auto;
+/* To make the body occupy all of the space html */
+html, body {
+  height: 100%;
 }
 
-.secondRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin: 30px;
+/* To center the Calculator */
+body{
+  display: flex;
+  justify-content: center;
+  align-items:center;
 
+  background-color: white;
 }
 
-.thirdRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin: 30px;
+.calculator {
+  padding: 75px 50px;
+  border: 5px black solid;
+  border-radius: 50px;
+  gap: 30px;
+
+  /* To avoid issues from occuring when the window is resized */
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 550px;
+
+  display: flex;
+  /* Stacks the elements vertically */
+  flex-direction: column;
+
+  background-color: silver;
 }
 
-.fourthRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin: 30px;
+.firstRow {
+  gap: 50px;
+
+  width: 265px;
+  height: 60px;
+
+  background-color: black;
+  color:white;
+
+  text-align:center;
+
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
+  
+  margin: auto;
+
+  border: 5px lightslategray solid ;
 }
 
-.fifthRow{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
+.secondRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.keys{
-    background-color: #69374e;
-    padding: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #374469;
-    
+.thirdRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.display{
-    background-color: white;
-    font-weight: bolder;
-    font-size: large;
-    font-family: roboto;
-
+.fourthRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
+
+.fifthRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.keys {
+  background-color: black;
+  color: silver;
+
+  width: 50px;
+
+  text-align: center;
+
+  font-size: larger;
+  font-family: roboto;
+
+  padding: 15px 20px;
+  /* border: 5px #98d2db solid; */
+  border-radius: 15px;
+}
+
+.operators {
+  background-color: white;
+  color: black;
+}
+
+.display {
+  background-color: black;
+  font-weight: bolder;
+  font-size: large;
+  font-family: roboto;
+  color: white;
+}
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
