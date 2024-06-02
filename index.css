@@ -95,6 +95,7 @@ body{
   background-color: black;
   color: silver;
 
+
   width: 50px;
 
   text-align: center;
@@ -117,6 +118,7 @@ body{
   font-size: large;
   font-family: roboto;
   color: white;
+  margin-right: 10px;
 }
 
 .roboto-thin {
