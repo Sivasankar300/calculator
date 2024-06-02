@@ -49,35 +49,48 @@ const multiplication = document.querySelector(".mul");
 const divison = document.querySelector(".div");
 const clear = document.querySelector(".clear");
 const equal = document.querySelector(".equal");
-
 const calculator = document.querySelector(".calculator");
 
-/*  - Fix the bug where the operations fail after the first clear (FIXED)
-    - Results with long intergers are now rounded up to the nearest two decimals(FIXED)
+/*  
     - Make it so that when a second operator is pressed before the 'equal', It should perform the first
-    operation first (Put off)
-    - Keyboard support
+    operation first
+    - remove the commas from the display values
       */
 
 let displayValue;
 let operation;
 let result;
 let secondValue = [];
+let secondValueDisplay;
 let firstValue = [];
+let firstValueDisplay;
 let firstValueNum;
 let secondValueNum;
 
 // To check if the input should be stored as the first or second value
 let secondValueboolan;
 
+
+/* Figure out how to repeat this function till all commas are moved */
+function removeCommas(array){
+  const index = array.indexOf(',');
+  if (index > -1) { // only splice array when item is found
+  return array.splice(index, 1); // 2nd parameter means remove one item only
+}
+}
+
 one.addEventListener("click", keyOne);
+
 function keyOne() {
   if (secondValueboolan == true) {
     secondValue.push("1");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
+    
   } else {
     firstValue.push("1");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+    display.textContent = firstValueNum;
   }
 }
 
@@ -85,10 +98,13 @@ two.addEventListener("click", keyTwo);
 function keyTwo() {
   if (secondValueboolan == true) {
     secondValue.push("2");
-    display.textContent = secondValue;
+  
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("2");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+    display.textContent = firstValueNum;
   }
 }
 
@@ -96,10 +112,13 @@ three.addEventListener("click", keyThree);
 function keyThree() {
   if (secondValueboolan == true) {
     secondValue.push("3");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("3");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -107,10 +126,13 @@ four.addEventListener("click", keyFour);
 function keyFour() {
   if (secondValueboolan == true) {
     secondValue.push("4");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("4");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -118,10 +140,13 @@ five.addEventListener("click", keyFive);
 function keyFive() {
   if (secondValueboolan == true) {
     secondValue.push("5");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("5");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -129,10 +154,13 @@ six.addEventListener("click", keySix);
 function keySix() {
   if (secondValueboolan == true) {
     secondValue.push("6");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("6");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -140,11 +168,13 @@ seven.addEventListener("click", keySeven);
 function keySeven() {
   if (secondValueboolan == true) {
     secondValue.push("7");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("7");
+    firstValueNum = Number(firstValue.join(""));
     
-    display.textContent = firstValue;
+    display.textContent = firstValueNum;
   }
 }
 
@@ -152,10 +182,13 @@ eight.addEventListener("click", keyEight);
 function keyEight() {
   if (secondValueboolan == true) {
     secondValue.push("8");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("8");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -163,10 +196,13 @@ nine.addEventListener("click", keyNine);
 function keyNine() {
   if (secondValueboolan == true) {
     secondValue.push("9");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("9");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -174,10 +210,13 @@ zero.addEventListener("click", keyZero);
 function keyZero() {
   if (secondValueboolan == true) {
     secondValue.push("0");
-    display.textContent = secondValue;
+    secondValueNum = Number(secondValue.join(""));
+    display.textContent = secondValueNum;
   } else {
     firstValue.push("0");
-    display.textContent = firstValue;
+    firstValueNum = Number(firstValue.join(""));
+
+    display.textContent = firstValueNum;
   }
 }
 
@@ -195,56 +234,76 @@ function keyClear() {
 
 addition.addEventListener("click", keyAdd);
 function keyAdd() {
-  operation = "add";
+
   display.textContent = " ";
+
+  if(operation!==undefined){
+    const event = new Event("click");
+    equal.dispatchEvent(event);
+  }
 
   if (firstValue != []) {
     secondValueboolan = true;
   } else {
     secondValueboolan = false;
   }
+  
+  operation = "add";
 }
 
 subtraction.addEventListener("click", keySub);
 function keySub() {
-  operation = "sub";
   display.textContent = " ";
+
+  if(operation!==undefined){
+    const event = new Event("click");
+    equal.dispatchEvent(event);
+  }
   if (firstValue != []) {
     secondValueboolan = true;
   } else {
     secondValueboolan = false;
   }
+  operation = "sub";
+
 }
 
 multiplication.addEventListener("click", keyMul);
 function keyMul() {
-  operation = "mul";
   display.textContent = " ";
+  if(operation!==undefined){
+    const event = new Event("click");
+    equal.dispatchEvent(event);
+  }
   if (firstValue != []) {
     secondValueboolan = true;
   } else {
     secondValueboolan = false;
   }
+  operation = "mul";
+
 }
 
 divison.addEventListener("click", keyDiv);
 function keyDiv() {
-  operation = "div";
   display.textContent = " ";
+  if(operation!==undefined){
+    const event = new Event("click");
+    equal.dispatchEvent(event);
+  }
   if (firstValue != []) {
     secondValueboolan = true;
   } else {
     secondValueboolan = false;
   }
+  operation = "div";
+
 }
 
 equal.addEventListener("click", keyEqual);
 function keyEqual() {
   firstValueNum = Number(firstValue.join(""));
-  console.log(firstValueNum);
-
   secondValueNum = Number(secondValue.join(""));
-  console.log(secondValueNum);
 
   operate(firstValueNum, operation, secondValueNum);
   display.textContent = result;
