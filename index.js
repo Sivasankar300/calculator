@@ -67,8 +67,11 @@ let firstValueDisplay;
 let firstValueNum;
 let secondValueNum;
 
+// To check if the result was 
+let resultBoolan = false;
+
 // To check if the input should be stored as the first or second value
-let secondValueboolan;
+let secondValueBoolan;
 
 
 /* Figure out how to repeat this function till all commas are moved */
@@ -80,9 +83,21 @@ function removeCommas(array){
 }
 
 one.addEventListener("click", keyOne);
-
+/* 1 + 1 =( operator or number) + 1 = 2 
+   if a number is pressed after = then clear out the firstValue and set secondvalueboolan to false
+   if a operator is pressed after = then don't clear out the first value
+   
+   The if statements at each of the numbers check if resultboolan is true which is reset upon pressing a operator
+   But the function isn't working as intended, why?
+   Try looking into debugger
+   */
 function keyOne() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+      secondValueBoolan = false;
+      firstValue=[]
+      resultBoolan = false;
+  }
+  if (secondValueBoolan == true) {
     secondValue.push("1");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -96,7 +111,12 @@ function keyOne() {
 
 two.addEventListener("click", keyTwo);
 function keyTwo() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("2");
   
     secondValueNum = Number(secondValue.join(""));
@@ -110,7 +130,12 @@ function keyTwo() {
 
 three.addEventListener("click", keyThree);
 function keyThree() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("3");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -124,7 +149,12 @@ function keyThree() {
 
 four.addEventListener("click", keyFour);
 function keyFour() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("4");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -138,7 +168,12 @@ function keyFour() {
 
 five.addEventListener("click", keyFive);
 function keyFive() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("5");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -152,7 +187,12 @@ function keyFive() {
 
 six.addEventListener("click", keySix);
 function keySix() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("6");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -166,7 +206,12 @@ function keySix() {
 
 seven.addEventListener("click", keySeven);
 function keySeven() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("7");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -180,7 +225,12 @@ function keySeven() {
 
 eight.addEventListener("click", keyEight);
 function keyEight() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("8");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -194,7 +244,12 @@ function keyEight() {
 
 nine.addEventListener("click", keyNine);
 function keyNine() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("9");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -208,7 +263,12 @@ function keyNine() {
 
 zero.addEventListener("click", keyZero);
 function keyZero() {
-  if (secondValueboolan == true) {
+  if(resultBoolan === true){
+    secondValueBoolan = false;
+    firstValue=[]
+    resultBoolan = false;
+}
+  if (secondValueBoolan == true) {
     secondValue.push("0");
     secondValueNum = Number(secondValue.join(""));
     display.textContent = secondValueNum;
@@ -229,23 +289,26 @@ function keyClear() {
   firstValueNum = 0;
   secondValueNum = 0;
   operation = undefined;
-  secondValueboolan = false;
+  secondValueBoolan = false;
 }
 
 addition.addEventListener("click", keyAdd);
 function keyAdd() {
+  resultBoolan = false;
 
   display.textContent = " ";
 
   if(operation!==undefined){
-    const event = new Event("click");
-    equal.dispatchEvent(event);
+    keyEqual();
+    resultBoolan = false;
+
+
   }
 
   if (firstValue != []) {
-    secondValueboolan = true;
+    secondValueBoolan = true;
   } else {
-    secondValueboolan = false;
+    secondValueBoolan = false;
   }
   
   operation = "add";
@@ -254,15 +317,19 @@ function keyAdd() {
 subtraction.addEventListener("click", keySub);
 function keySub() {
   display.textContent = " ";
+  resultBoolan = false;
+
 
   if(operation!==undefined){
-    const event = new Event("click");
-    equal.dispatchEvent(event);
+    keyEqual();
+    resultBoolan = false;
+
+
   }
   if (firstValue != []) {
-    secondValueboolan = true;
+    secondValueBoolan = true;
   } else {
-    secondValueboolan = false;
+    secondValueBoolan = false;
   }
   operation = "sub";
 
@@ -271,14 +338,18 @@ function keySub() {
 multiplication.addEventListener("click", keyMul);
 function keyMul() {
   display.textContent = " ";
+  resultBoolan = false;
+
   if(operation!==undefined){
-    const event = new Event("click");
-    equal.dispatchEvent(event);
+    keyEqual();
+    resultBoolan = false;
+
+
   }
   if (firstValue != []) {
-    secondValueboolan = true;
+    secondValueBoolan = true;
   } else {
-    secondValueboolan = false;
+    secondValueBoolan = false;
   }
   operation = "mul";
 
@@ -287,23 +358,30 @@ function keyMul() {
 divison.addEventListener("click", keyDiv);
 function keyDiv() {
   display.textContent = " ";
+  resultBoolan = false;
+
   if(operation!==undefined){
-    const event = new Event("click");
-    equal.dispatchEvent(event);
+    keyEqual();
+    resultBoolan = false;
+
   }
   if (firstValue != []) {
-    secondValueboolan = true;
+    secondValueBoolan = true;
   } else {
-    secondValueboolan = false;
+    secondValueBoolan = false;
   }
   operation = "div";
 
 }
 
+/* Figure out a way to detect if next button pressed is a number or operator*/
 equal.addEventListener("click", keyEqual);
 function keyEqual() {
   firstValueNum = Number(firstValue.join(""));
   secondValueNum = Number(secondValue.join(""));
+
+  console.log(firstValueNum);
+  console.log(secondValueNum);
 
   operate(firstValueNum, operation, secondValueNum);
   display.textContent = result;
@@ -311,8 +389,11 @@ function keyEqual() {
   operation = undefined;
   firstValue = [];
   secondValue = [];
+
   firstValue.push(result);
 
+  resultBoolan = true;
+  secondValueBoolan = false;
   firstValueNum = 0;
   secondValueNum = 0;
 }
