@@ -8,8 +8,6 @@
 
  This project is focused on deepening one's knowledge of DOM, Eventlisteners, Mouse and Keyboard events.
  As well as letting the students figure out and learn How to store, Process and Display the values for the Calculator to function.
- 
- I have achieved the solution to the above problem by utilising advanced Array functions such as "push".
 
 **Live Preview:** https://github.com/Sivasankar300/calculator
 
