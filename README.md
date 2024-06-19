@@ -1,4 +1,4 @@
-## **A Calculator Project** made as per The Odin Project's curriculum.
+## **A Calculator Project** as per The Odin Project's curriculum.
 
 **Link to The Odin Project course**: https://www.theodinproject.com/
 
