@@ -1,6 +1,6 @@
 ## **A Calculator Project** as per The Odin Project's curriculum.
 
-A fully functoning Calculator
+A fully functioning Calculator
 
 ### It's functions:
 - Has keyboard functionality.
